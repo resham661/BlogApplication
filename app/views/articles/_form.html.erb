@@ -7,22 +7,18 @@
   </ul>
 <% end %>
 
-<turbo-frame dom_id @article do>
-  <div class="block">
-    <%= form_for @articles do |f| %>
-      <p>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-      </p>
+<%= form_for @articles do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
 
-      <p>
-        <%= f.label :body %>
-        <%= f.text_field :body %>
-      </p>
+  <p>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+  </p>
 
-      <p>
-        <%= f.submit %>
-      </p>
-    <% end %>
-  </div>
-</turbo-frame>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
