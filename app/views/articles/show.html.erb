@@ -1,0 +1,12 @@
+<h1>Articles list</h1>
+
+<h2><%= @articles.title %></h2>
+<h3><%= @articles.body %></h3>
+
+<%= link_to "Back", articles_path %>
+<%
+=begin%>
+ <%= link_to "Edit", edit_article_path(@articles) %> |
+<%= link_to "Delete", article_path(@articles), data: {turbo_method: :Delete, turbo_confirm: "Are you sure?"} %>  
+<%
+=end%>

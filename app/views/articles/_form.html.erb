@@ -1,0 +1,28 @@
+<% if @articles.errors.any? %>
+  <h2>The following errors prevented the todo from being saved</h2>
+  <ul>
+    <% @articles.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>  
+  </ul>
+<% end %>
+
+<turbo-frame dom_id @article do>
+  <div class="block">
+    <%= form_for @articles do |f| %>
+      <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </p>
+
+      <p>
+        <%= f.label :body %>
+        <%= f.text_field :body %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</turbo-frame>
