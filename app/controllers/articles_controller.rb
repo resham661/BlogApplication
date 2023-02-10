@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
   def update
     if @articles.update(article_params)
       flash[:notice] = "Article #{@articles.id} updated successfully!!"
-      redirect_to @articles
+      redirect_to articles_path
     else
       render :edit, status: :unprocessable_entity
     end

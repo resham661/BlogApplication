@@ -1,0 +1,33 @@
+<%
+=begin%>
+ <%= turbo_frame_tag "frame1" do %>
+  <%= form_for @articles do |f| %>
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :body %>
+      <%= f.text_field :body %>
+    </p>
+
+    <p>
+      <%= f.button :submit, data: { turbo_frame: "frame1"} %>
+    </p>
+  <% end %>
+
+<% end %>
+ 
+<%= turbo_frame_tag "frame1" %>
+<h1>Articles list</h1>
+
+<h2><%= @articles.title %></h2>
+<h3><%= @articles.body %></h3>
+
+<%= link_to "Back", articles_path %>
+
+<% end %>
+ 
+<%
+=end%>

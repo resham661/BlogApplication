@@ -1,12 +1,9 @@
 <div>
   <h2>Update the Article</h2>
-  <%= turbo_frame_tag @articles do %>
-    <%= render 'form'%>
+  <%= turbo_frame_tag "frame1" do %>
+    <%= render 'form', data: { turbo_frame: "frame1"} %>
     
-    <%
-=begin%>
- <%= link_to 'Back', article_path(@articles) %> 
-<%
-=end%>
+    
+    <button type="button"><%= link_to 'Back', articles_path %></p> 
   <% end %>
 </div>
